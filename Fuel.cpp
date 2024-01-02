@@ -28,16 +28,17 @@ void Fuel::input() {
 	this->capacity = stoi(temp);
 	cout << "The data are entered successfully!" << endl << endl;
 }
-void Fuel::output() {
-	cout << "Fuel data:" << endl << "- Capacity: ";
-	if (this->getCapacity())
-		cout << "Full" << endl << endl;
-	else
-		cout << "Empty" << endl << endl;
-}
 void Fuel::fill() {
 	this->capacity = 1;
 }
 void Fuel::empty() {
 	this->capacity = 0;
+}
+ostream& Fuel::operator << (ostream& os) {
+	string buffer = "Fuel data:\n- Capacity: ";
+	if (this->getCapacity())
+		buffer += "Full\n\n";
+	else
+		buffer += "Empty\n\n";
+	return os << buffer;
 }

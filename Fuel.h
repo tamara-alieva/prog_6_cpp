@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 class Fuel {
 private:
@@ -9,7 +10,7 @@ public:
 	void setCapacity(bool capacity);
 	bool getCapacity();
 	void input();
-	void output();
 	void fill();
 	void empty();
+	std::ostream& operator << (std::ostream& os);
 };

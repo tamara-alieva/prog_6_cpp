@@ -35,18 +35,6 @@ void Passenger::input() {
 	this->payment_method = stoi(temp);
 	cout << "The data are entered successfully!" << endl << endl;
 }
-void Passenger::output() {
-	if (!((this->getName()).empty())) {
-		cout << "Passenger data:" << endl << "- Name: " << this->getName() << endl;
-		cout << "- Balance: " << this->getBalance() << endl << "- Payment method: ";
-		if (this->getMethod())
-			cout << "Credit card" << endl << endl;
-		else
-			cout << "Cash" << endl << endl;
-	}
-	else
-		throw string{"The Passenger name is missing!"};
-}
 void Passenger::takePayment(int payment) {
 	int old_balance = this->getBalance();
 	this->setBalance(old_balance - payment);
@@ -56,4 +44,17 @@ Passenger& Passenger::operator=(Person& person) {
 	this->name = person.getName();
 	this->balance = person.getBalance();
 	return *this;
+}
+
+ostream& Passenger::operator << (ostream& os) {
+	if (!((this->name).empty())) {
+		string buffer = "Passenger data:\n- Name: " + this->name + "\n- Balance: " + to_string(this->balance) + "\n- Payment method: ";
+		if (this->getMethod())
+			buffer += "Credit card\n\n";
+		else
+			buffer += "Cash\n\n";
+		return os << buffer;
+	}
+	else
+		throw string{"The Passenger name is missing!"};
 }

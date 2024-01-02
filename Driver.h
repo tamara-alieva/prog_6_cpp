@@ -10,7 +10,6 @@ class Driver : public Person {
 	friend int getOrderAmount(Driver& driver);
 	friend void givePayment(int payment, Driver& driver);
 	friend void increaseOrderAmount(Driver& driver);
-	friend void output(Driver& driver);
 private:
 	int experience, orderAmount;
 public:
@@ -20,6 +19,7 @@ public:
 	Driver(std::string name, int balance, int experience, int orderAmount);
 	void input();
 	Driver& operator=(Person& person);
+	std::ostream& operator << (std::ostream& os);
 };
 
 Driver operator + (Driver& driver1, Driver& driver2);

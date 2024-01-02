@@ -20,5 +20,5 @@ public:
 	bool getRate();
 	static int getNumberOfCars();
 	void input();
-	void output();
+	std::ostream& operator << (std::ostream& os);
 };

@@ -14,7 +14,7 @@ public:
 	void setMethod(bool method);
 	bool getMethod();
 	void input();
-	void output();
 	void takePayment(int payment);
 	Passenger& operator=(Person& person);
+	std::ostream& operator << (std::ostream& os);
 };

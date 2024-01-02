@@ -106,3 +106,10 @@ Driver operator++ (Driver& driver, int) // postfix operator ++
 	++driver;
 	return copy;
 }
+ostream& Driver::operator << (ostream& os) {
+	if (!(this->name.empty())) {
+		return os << "Driver data:" << endl << "- Name: " << this->name << endl << "- Balance: " << this->balance << endl << "- Years of experience: " << this->experience << endl << "- Amount of completed orders: " << this->orderAmount << endl << endl;
+	}
+	else
+		throw string{"The Driver name is missing!"};
+}

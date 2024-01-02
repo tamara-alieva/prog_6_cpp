@@ -64,13 +64,16 @@ void Car::input() {
 	this->rate = stoi(temp);
 	cout << "The data are entered successfully!" << endl << endl;
 }
-void Car::output() {
+
+ostream& Car::operator << (ostream& os) {
+	string buffer;
 	if (!(this->brand.empty())) {
-		cout << "Car data:" << endl << "- Brand: " << this->brand << endl << "- Rate: ";
+		buffer = "Car data:\n- Brand: " + this->brand + "\n- Rate: ";
 		if (this->rate)
-			cout << "Comfort" << endl;
+			buffer += "\nComfort";
 		else
-			cout << "Economy" << endl;
+			buffer += "\nEconomy";
+		return os << buffer;
 	}
 	else
 		throw string{"The Car brand is missing!"};

@@ -12,8 +12,8 @@ public:
 	Person(std::string name, int balance);
 	void setName(std::string name);
 	void setBalance(int balance);
-	std::string getName();
+	std::string getName() const ;
 	int getBalance();
 	void input();
-	void output();
+	std::ostream& operator << (std::ostream& os);
 };

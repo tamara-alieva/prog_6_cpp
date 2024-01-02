@@ -31,7 +31,7 @@ void Person::setName(string name) {
 void Person::setBalance(int balance) {
 	this->balance = balance;
 }
-string Person::getName() {
+string Person::getName() const {
 	return this->name;
 }
 int Person::getBalance() {
@@ -54,9 +54,9 @@ void Person::input() {
 	} while (!flag);
 	this->balance = stoi(temp);
 }
-void Person::output() {
+ostream& Person::operator << (ostream& os) {
 	if (!(this->name.empty()))
-		cout << "Person data:" << endl << "- Name: " << this->name << endl << "- Balance: " << this->balance << endl;
+		return os << "Person data:" << endl << "- Name: " << this->name << endl << "- Balance: " << this->balance << endl;
 	else
 		throw string{"The Person name is missing!"};
 }
