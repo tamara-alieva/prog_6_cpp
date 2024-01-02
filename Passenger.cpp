@@ -24,7 +24,8 @@ bool Passenger::getMethod() {
 }
 void Passenger::input() {
 	string temp; bool flag;
-	cout << "** Entry the data of Passenger: " << this->getName() << " **" << endl;
+	Person::input();
+	cout << "** Passenger data entry **" << endl;
 	do {
 		cout << "Payment method (0 - Cash, 1 - Credit card): ";
 		cin >> temp;

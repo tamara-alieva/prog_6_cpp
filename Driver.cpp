@@ -20,6 +20,38 @@ Driver::Driver(string name, int balance, int experience, int orderAmount) : Pers
 	this->experience = experience;
 	this->orderAmount = orderAmount;
 }
+void Driver::input() {
+	string temp; bool flag;
+	cout << "** Driver data entry **" << endl;
+	do {
+		cout << "Name: ";
+		cin >> this->name;
+		flag = Checking::nameCheck(this->name);
+		if (!flag) cout << "Please try again.. ";
+	} while (!flag);
+	do {
+		cout << "Balance: ";
+		cin >> temp;
+		flag = Checking::intCheck(temp);
+		if (!flag) cout << "Please try again.. ";
+	} while (!flag);
+	this->balance = stoi(temp);
+	do {
+		cout << "Years of experience: ";
+		cin >> temp;
+		flag = Checking::intCheck(temp);
+		if (!flag) cout << "Please try again.. ";
+	} while (!flag);
+	this->experience = stoi(temp);
+	do {
+		cout << "Amount of completed orders: ";
+		cin >> temp;
+		flag = Checking::intCheck(temp);
+		if (!flag) cout << "Please try again.. ";
+	} while (!flag);
+	this->orderAmount = stoi(temp);
+	cout << "The data are entered successfully!" << endl << endl;
+}
 
 // friend functions
 void setExperience(int experience, Driver& driver) {
@@ -41,25 +73,6 @@ void givePayment(int payment, Driver& driver) {
 void increaseOrderAmount(Driver& driver) {
 	int old_amount = getOrderAmount(driver);
 	setOrderAmount(old_amount + 1, driver);
-}
-void input(Driver& driver) {
-	string temp; bool flag;
-	cout << "** Entry the data of Driver: " << driver.getName() << " **" << endl;
-	do {
-		cout << "Years of experience: ";
-		cin >> temp;
-		flag = Checking::intCheck(temp);
-		if (!flag) cout << "Please try again.. ";
-	} while (!flag);
-	driver.experience = stoi(temp);
-	do {
-		cout << "Amount of completed orders: ";
-		cin >> temp;
-		flag = Checking::intCheck(temp);
-		if (!flag) cout << "Please try again.. ";
-	} while (!flag);
-	driver.orderAmount = stoi(temp);
-	cout << "The data are entered successfully!" << endl << endl;
 }
 void output(Driver& driver) {
 	if (!((driver.getName()).empty())) {
