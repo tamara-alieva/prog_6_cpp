@@ -14,10 +14,15 @@ int main() {
     passenger.input();
 
     Driver driver{};
-    driver.input();*/
+    driver.input();
 
     Passenger pass1{ "Georgiy", 5000, true };
-    pass1.output();
+    pass1.output();*/
+
+    Person person{ "Kirill", 7000 };
+    Passenger pass2{};
+    pass2 = person;
+    pass2.output();
 
     return 0;
 }
