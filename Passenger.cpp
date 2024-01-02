@@ -51,3 +51,9 @@ void Passenger::takePayment(int payment) {
 	int old_balance = this->getBalance();
 	this->setBalance(old_balance - payment);
 }
+
+Passenger& Passenger::operator=(Person& person) {
+	this->name = person.getName();
+	this->balance = person.getBalance();
+	return *this;
+}

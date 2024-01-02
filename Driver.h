@@ -19,6 +19,7 @@ public:
 	Driver(int balance);
 	Driver(std::string name, int balance, int experience, int orderAmount);
 	void input();
+	Driver& operator=(Person& person);
 };
 
 Driver operator + (Driver& driver1, Driver& driver2);

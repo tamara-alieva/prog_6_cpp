@@ -16,4 +16,5 @@ public:
 	void input();
 	void output();
 	void takePayment(int payment);
+	Passenger& operator=(Person& person);
 };

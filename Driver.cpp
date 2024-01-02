@@ -84,8 +84,13 @@ void output(Driver& driver) {
 	else
 		throw string{"The Driver name is missing!"};
 }
-
 // operator overload
+Driver& Driver::operator=(Person& person) {
+	this->name = person.getName();
+	this->balance = person.getBalance();
+	return *this;
+}
+
 Driver operator + (Driver& driver1, Driver& driver2) // operator +
 {
 	return Driver(driver1.getBalance() + driver2.getBalance());
