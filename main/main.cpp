@@ -10,10 +10,14 @@ using namespace std;
 
 int main() {
     cout << "TESTS:" << endl << endl;
-    Passenger passenger{ "Tom" };
+    /*Passenger passenger{ "Ivan" };
     passenger.input();
 
     Driver driver{};
-    driver.input();
+    driver.input();*/
+
+    Passenger pass1{ "Georgiy", 5000, true };
+    pass1.output();
+
     return 0;
 }
