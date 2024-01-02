@@ -53,7 +53,6 @@ void Person::input() {
 		if (!flag) cout << "Please try again.. ";
 	} while (!flag);
 	this->balance = stoi(temp);
-	cout << "The data are entered successfully!" << endl << endl;
 }
 void Person::output() {
 	if (!(this->name.empty()))
