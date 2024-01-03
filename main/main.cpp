@@ -10,7 +10,6 @@ using namespace std;
 
 int main() {
     cout << "TESTS:" << endl << endl;
-    /*
     
     cout << "## Calling base (Person) class's overloaded method (with calling Person::input() method)" << endl;
     Passenger passenger1{ "Ivan" };
@@ -25,37 +24,39 @@ int main() {
     passenger2 << cout;
 
     cout << "## Overloaded operator= for Derived classes" << endl;
-    Person person{ "Kirill", 7000 };
+    Person person1{ "Kirill", 7000 };
     Passenger passenger3{};
-    passenger3 = person;
+    passenger3 = person1;
     passenger3 << cout;
     
     cout << "## Virtual and non-virtual functions" << endl << endl;
 
     cout << "# Calling virtual function for dynamic object" << endl;
-    Person* pers1{ &person };
+    Person* person_ptr{ &person1 };
     Driver driver1{};
-    pers1 = &driver1;
-    pers1->input();
+    person_ptr = &driver1;
+    person_ptr->input();
 
     cout << "# Calling non-virtual function for dynamic object" << endl;
-    Passenger pass3{"Nikolay", 7000, true};
-    pers1 = &pass3;
-    pers1->output();
+    Passenger passenger4{"Nikolay", 7000, true};
+    person_ptr = &passenger4;
+    person_ptr->output();
 
     cout << endl << "# Calling virtual function from non-virtual" << endl;
-    pers1 = &driver1;
-    pers1->test_virtual();
+    person_ptr = &driver1;
+    person_ptr->test_virtual();
 
-    cout << endl << "# Calling non-virtual function from non-virtual" << endl;
-    pers1 = &pass3;
-    pers1->test_non_virtual();
-
-    */
+    cout << "# Calling non-virtual function from non-virtual" << endl;
+    person_ptr = &passenger4;
+    person_ptr->test_non_virtual();
 
     cout << endl << "## Abstract class Engine -> class Car" << endl;
-    Car car{ "Volvo", true };
-    cout << "Pure virtual method getBrand: " << car.getBrand() << endl;
+    Car<string> car1{ "12345fh", "Volvo", true };
+    cout << "Pure virtual method getBrand: " << car1.getBrand() << endl;
+
+    cout << endl << "## Class template (Car)" << endl;
+    Car<int> car2{ 12345, "Volvo", true };
+    car2 << cout;
 
     return 0;
 }
