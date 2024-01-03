@@ -16,5 +16,7 @@ public:
 	int getBalance();
 	virtual void input();
 	void output();
+	void test_virtual();
+	void test_non_virtual();
 	std::ostream& operator << (std::ostream& os);
 };

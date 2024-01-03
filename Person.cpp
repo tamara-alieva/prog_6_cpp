@@ -60,6 +60,14 @@ void Person::output() {
 	else
 		throw string{"The Person name is missing!"};
 }
+void Person::test_virtual() {
+	cout << "* Person class test_virtual function *" << endl;
+	this->input();
+}
+void Person::test_non_virtual() {
+	cout << "* Person class test_non_virtual function *" << endl;
+	this->output();
+}
 ostream& Person::operator << (ostream& os) {
 	if (!(this->name.empty()))
 		return os << "Person data:" << endl << "- Name: " << this->name << endl << "- Balance: " << this->balance << endl;
