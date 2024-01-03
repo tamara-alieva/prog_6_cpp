@@ -55,9 +55,9 @@ Order::Order(bool rate, bool congestion, Passenger passenger, Driver driver, Car
 		string congestion_str = Order::congestionString(congestion, buffer);
 		cout << "Road congestion: " << congestion_str << endl;
 		cout << "Cost of the trip: " << payment << endl << endl;
-		passenger.output();
-		driver.output();
-		car.output();
+		passenger << cout;
+		driver << cout;
+		car << cout;
 	}
 }
 
