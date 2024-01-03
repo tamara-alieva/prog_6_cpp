@@ -14,6 +14,6 @@ public:
 	void setBalance(int balance);
 	std::string getName() const ;
 	int getBalance();
-	void input();
+	virtual void input();
 	std::ostream& operator << (std::ostream& os);
 };
