@@ -11,7 +11,7 @@ int min_payment = 200; // static member initialization
 void increasePayment();
 int calculatePayment(bool rate, bool congestion);
 
-Order::Order(bool rate, bool congestion, Passenger passenger, Driver driver, Car car) {
+Order::Order(bool rate, bool congestion, Passenger passenger, Driver driver, Car<string> car) {
 	cout << "ORDER" << endl;
 	int payment;
 	payment = calculatePayment(rate, congestion);
