@@ -1,9 +1,10 @@
 #pragma once
 
+#include "Engine.h"
 #include "Fuel.h"
 #include <string>
 
-class Car {
+class Car : public Engine {
 private:
 	std::string brand;
 	bool rate;
@@ -16,7 +17,7 @@ public:
 	Car(std::string brand, bool rate);
 	void setBrand(std::string brand);
 	void setRate(bool rate);
-	std::string getBrand();
+	std::string getBrand() override;
 	bool getRate();
 	static int getNumberOfCars();
 	void input();
