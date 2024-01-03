@@ -54,6 +54,12 @@ void Person::input() {
 	} while (!flag);
 	this->balance = stoi(temp);
 }
+void Person::output() {
+	if (!(this->name.empty()))
+		cout << "Person data:" << endl << "- Name: " << this->name << endl << "- Balance: " << this->balance << endl;
+	else
+		throw string{"The Person name is missing!"};
+}
 ostream& Person::operator << (ostream& os) {
 	if (!(this->name.empty()))
 		return os << "Person data:" << endl << "- Name: " << this->name << endl << "- Balance: " << this->balance << endl;
