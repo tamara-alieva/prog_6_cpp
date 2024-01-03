@@ -23,8 +23,6 @@ int main() {
     cout << "## Calling base (Person) class's constructor" << endl;
     Passenger passenger2{ "Georgiy", 5000, true };
     passenger2 << cout;
-    
-    */
 
     cout << "## Overloaded operator= for Derived classes" << endl;
     Person person{ "Kirill", 7000 };
@@ -52,6 +50,12 @@ int main() {
     cout << endl << "# Calling non-virtual function from non-virtual" << endl;
     pers1 = &pass3;
     pers1->test_non_virtual();
+
+    */
+
+    cout << endl << "## Abstract class Engine -> class Car" << endl;
+    Car car{ "Volvo", true };
+    cout << "Pure virtual method getBrand: " << car.getBrand() << endl;
 
     return 0;
 }
