@@ -13,7 +13,8 @@ public:
 	Passenger(std::string name, int balance, bool method);
 	void setMethod(bool method);
 	bool getMethod();
-	void input();
+	void input() override;
+	void output();
 	void takePayment(int payment);
 	Passenger& operator=(Person& person);
 	std::ostream& operator << (std::ostream& os);

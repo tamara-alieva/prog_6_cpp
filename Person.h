@@ -15,5 +15,6 @@ public:
 	std::string getName() const ;
 	int getBalance();
 	virtual void input();
+	void output();
 	std::ostream& operator << (std::ostream& os);
 };
