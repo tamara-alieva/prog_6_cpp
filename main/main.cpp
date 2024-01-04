@@ -11,13 +11,15 @@ using namespace std;
 int main() {
     cout << "TESTS:" << endl << endl;
     
-    cout << "## Calling base (Person) class's overloaded method (with calling Person::input() method)" << endl;
-    Passenger passenger1{ "Ivan" };
-    passenger1.input();
+    cout << "## Overloaded Passenger::setInfo(...) method (with calling Person::setInfo(...) method)" << endl;
+    Passenger passenger1{};
+    passenger1.setInfo("Ivan", 5000, false);
+    passenger1 << cout;
 
-    cout << "## Calling base (Person) class's overloaded method (without calling Person::input() method)" << endl;
-    Driver driver{};
-    driver.input();
+    cout << "## Overloaded Driver::setInfo(...) method (without calling Person::setInfo(...) method)" << endl;
+    Driver driver1{};
+    driver1.setInfo("Leonid", 8700, 14, 390);
+    driver1 << cout;
 
     cout << "## Calling base (Person) class's constructor" << endl;
     Passenger passenger2{ "Georgiy", 5000, true };
@@ -33,8 +35,8 @@ int main() {
 
     cout << "# Calling virtual function for dynamic object" << endl;
     Person* person_ptr{ &person1 };
-    Driver driver1{};
-    person_ptr = &driver1;
+    Driver driver2{ "Andrey" };
+    person_ptr = &driver2;
     person_ptr->input();
 
     cout << "# Calling non-virtual function for dynamic object" << endl;
@@ -43,7 +45,7 @@ int main() {
     person_ptr->output();
 
     cout << endl << "# Calling virtual function from non-virtual" << endl;
-    person_ptr = &driver1;
+    person_ptr = &driver2;
     person_ptr->test_virtual();
 
     cout << "# Calling non-virtual function from non-virtual" << endl;
