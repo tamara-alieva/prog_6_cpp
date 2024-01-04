@@ -31,6 +31,12 @@ void Person::setName(string name) {
 void Person::setBalance(int balance) {
 	this->balance = balance;
 }
+
+void Person::setInfo(std::string name, int balance) {
+	this->name = name;
+	this->balance = balance;
+}
+
 string Person::getName() const {
 	return this->name;
 }

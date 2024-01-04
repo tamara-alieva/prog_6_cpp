@@ -20,22 +20,15 @@ Driver::Driver(string name, int balance, int experience, int orderAmount) : Pers
 	this->experience = experience;
 	this->orderAmount = orderAmount;
 }
+void Driver::setInfo(std::string name, int balance, int experience, int amount) {
+	this->name = name;
+	this->balance = balance;
+	this->experience = experience;
+	this->orderAmount = amount;
+}
 void Driver::input() {
 	string temp; bool flag;
-	cout << "** Driver data entry **" << endl;
-	do {
-		cout << "Name: ";
-		cin >> this->name;
-		flag = Checking::nameCheck(this->name);
-		if (!flag) cout << "Please try again.. ";
-	} while (!flag);
-	do {
-		cout << "Balance: ";
-		cin >> temp;
-		flag = Checking::intCheck(temp);
-		if (!flag) cout << "Please try again.. ";
-	} while (!flag);
-	this->balance = stoi(temp);
+	cout << "** Driver data entry: " << this->name << " **" << endl;
 	do {
 		cout << "Years of experience: ";
 		cin >> temp;

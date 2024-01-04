@@ -19,13 +19,16 @@ Passenger::Passenger(string name, int balance, bool method) : Person(name, balan
 void Passenger::setMethod(bool method) {
 	this->payment_method = method;
 }
+void Passenger::setInfo(string name, int balance, bool method) {
+	Person::setInfo(name, balance);
+	this->payment_method = method;
+}
 bool Passenger::getMethod() {
 	return this->payment_method;
 }
 void Passenger::input() {
 	string temp; bool flag;
-	Person::input();
-	cout << "** Passenger data entry **" << endl;
+	cout << "** Passenger data entry: " << this->name << " **" << endl;
 	do {
 		cout << "Payment method (0 - Cash, 1 - Credit card): ";
 		cin >> temp;

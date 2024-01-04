@@ -17,7 +17,8 @@ public:
 	Driver(std::string name);
 	Driver(int balance);
 	Driver(std::string name, int balance, int experience, int orderAmount);
-	void input() override;
+	void setInfo(std::string name, int balance, int experience, int amount);
+	void input();
 	Driver& operator=(Person& person);
 	std::ostream& operator << (std::ostream& os);
 };

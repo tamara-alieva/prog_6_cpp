@@ -12,6 +12,7 @@ public:
 	Person(std::string name, int balance);
 	void setName(std::string name);
 	void setBalance(int balance);
+	void setInfo(std::string name, int balance);
 	std::string getName() const ;
 	int getBalance();
 	virtual void input();

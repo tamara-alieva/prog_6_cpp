@@ -12,8 +12,9 @@ public:
 	Passenger(int balance);
 	Passenger(std::string name, int balance, bool method);
 	void setMethod(bool method);
+	void setInfo(std::string name, int balance, bool method);
 	bool getMethod();
-	void input() override;
+	void input();
 	void output();
 	void takePayment(int payment);
 	Passenger& operator=(Person& person);
